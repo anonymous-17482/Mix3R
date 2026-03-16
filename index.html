@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality">
+    <meta name="keywords" content="VR-3R, 3D Scene Reconstruction, Virtual Reality, Zero-shot">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" type="image/png" href="./static/images/mix3r_icon.png">
+
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;"></div>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title publication-title">
+                            <img src="./static/images/mix3r_icon.png" alt="Mix3R site icon" class="hero-icon">
+                            VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Anonymous</a><sup>*</sup>
+                            </span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-venue">
+                                IEEE VR 2026 Submission
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Coming Soon</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-centered">
+                        <h2 class="title is-3" style="margin-bottom: 1rem;">TL; DR</h2>
+                        <p class="is-size-5 has-text-weight-bold">
+                            We introduce VR-3R, a zero-shot framework that reconstructs high-quality 3D scenes robust
+                            to shadows and occlusions from a single RGB image by strategically integrating large-scale
+                            model priors.
+                        </p>
+                        <div class="has-text-centered" style="margin-top: 1.5rem;">
+                            <img src="./static/mix3r/images/tldr.png" alt="VR-3R TLDR diagram" width="100%" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3 has-text-centered">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            We present VR-3R, a zero-shot 3D scene reconstruction framework that enables immersive VR
+                            interaction from a single real-world image. The increasing demand for mixed-reality
+                            applications, including memory recollection and remote space exploration, highlights the
+                            importance of reconstructing 3D environments from arbitrary photographs. Despite advances in
+                            single-image 3D scene generation, existing methods remain limited by incomplete background
+                            recovery under occlusion and inaccurate object placement caused by monocular depth
+                            estimation. VR-3R addresses these challenges by integrating large-scale model priors to
+                            reconstruct high-quality 3D scenes without additional training. The framework incorporates
+                            VLM-based foreground-background separation and depth alignment with unprojected point
+                            clouds, achieving both scene-level consistency and detailed object recovery. Experiments on
+                            the 3D-FRONT dataset and in-the-wild real images demonstrate that VR-3R generates realistic
+                            backgrounds and accurate 3D models across diverse scenarios. We improve Chamfer Distance by
+                            over 23% and F-score by more than 6% at the object level, and achieve 12% and 18% gains in
+                            FID and FID-CLIP at the scene level. Our framework reconstructs interactive and immersive
+                            VR spaces from a single image, enabling practical deployment in real-world applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered" style="margin-bottom: 3rem;">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Method</h2>
+                    <div class="content has-text-centered">
+                        <img src="./static/mix3r/images/method.png" alt="VR-3R method diagram" width="100%"
+                            style="margin-bottom: 1.5rem;" loading="lazy">
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            Overview of the VR-3R pipeline. (a) Given a single input image, our system performs depth
+                            estimation, open-vocabulary segmentation, VLM-guided foreground-background separation, and
+                            super-resolution with amodal completion for 2D image understanding. (b) The foreground mask
+                            is then used to inpaint the background, and each object image is converted into 3D and
+                            integrated with the background. Finally, depth alignment is applied to reconstruct a
+                            compositional 3D scene from the single input image.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered" style="margin-bottom: 3rem;">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Results</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            The original Mix3R package includes paired qualitative renders and interactive Sketchfab
+                            demos for both 3D-FRONT scenes and in-the-wild images. They are preserved below in the
+                            same order while using the SceneLinker page structure.
+                        </p>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Interactive 3D Demos (3D-FRONT)</h3>
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_1.png" alt="3D-FRONT demo image 1" loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_2.png" alt="3D-FRONT demo image 2" loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_7.png" alt="3D-FRONT demo image 3" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered is-multiline" style="margin-bottom: 2rem;">
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_9850" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/1c841aabd6854ca7b0148fe92d5639a8/embed"></iframe>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Sgour_12" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/b0b206223dfc47eda4a139f9b16c2920/embed"></iframe>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_room1" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/9f80c7342ca54243b640612d0b86de68/embed"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Interactive 3D Demos (In-the-wild Image)</h3>
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_4.png" alt="In-the-wild demo image 1" loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_5.png" alt="In-the-wild demo image 2" loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-one-third">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/image_6.png" alt="In-the-wild demo image 3" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_cat" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/2a58c8f2ecca487da0650ac5cc936a12/embed"></iframe>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_bed" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/954703d647cb406dade494fec412b98f/embed"></iframe>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_toilet" loading="lazy" class="result-frame"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
+                                    src="https://sketchfab.com/models/95e065d43c6849f38ebfb9b93bcc727f/embed"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered" style="margin-bottom: 3rem;">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Source Media Archive</h2>
+                    <div class="content has-text-justified archive-copy">
+                        <p>
+                            To avoid dropping any source material from the Mix3R-master package, the remaining media
+                            assets that were not surfaced in the original landing page are also exposed here.
+                        </p>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Additional Render</h3>
+                    <figure class="media-card">
+                        <img src="./static/mix3r/images/image_3.png" alt="Additional Mix3R render" loading="lazy">
+                    </figure>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Repository Banner Video</h3>
+                    <div class="media-card">
+                        <video controls playsinline width="100%" class="archive-video">
+                            <source src="./static/mix3r/videos/banner_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Repository Image Archive</h3>
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-half">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/carousel1.jpg" alt="Repository archive image 1"
+                                    loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-half">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/carousel2.jpg" alt="Repository archive image 2"
+                                    loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-half">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/carousel3.jpg" alt="Repository archive image 3"
+                                    loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="column is-half">
+                            <figure class="media-card">
+                                <img src="./static/mix3r/images/carousel4.jpg" alt="Repository archive image 4"
+                                    loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Repository Video Archive</h3>
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-one-third">
+                            <div class="media-card">
+                                <video controls playsinline width="100%" class="archive-video">
+                                    <source src="./static/mix3r/videos/carousel1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card">
+                                <video controls playsinline width="100%" class="archive-video">
+                                    <source src="./static/mix3r/videos/carousel2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card">
+                                <video controls playsinline width="100%" class="archive-video">
+                                    <source src="./static/mix3r/videos/carousel3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="title is-4 has-text-centered section-subtitle">Icon Assets</h3>
+                    <div class="columns is-centered is-multiline">
+                        <div class="column is-one-third">
+                            <div class="media-card asset-card">
+                                <img src="./static/images/mix3r_icon.png" alt="mix3r_icon.png preview" class="asset-icon">
+                                <p class="asset-label">Current site icon (`mix3r_icon.png`)</p>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card asset-card">
+                                <img src="./static/mix3r/images/icon.ico" alt="icon.ico preview" class="asset-icon">
+                                <p class="asset-label">Archived original icon (`icon.ico`)</p>
+                            </div>
+                        </div>
+                        <div class="column is-one-third">
+                            <div class="media-card asset-card">
+                                <img src="./static/mix3r/images/favicon.ico" alt="favicon.ico preview" class="asset-icon">
+                                <p class="asset-label">Archived original favicon (`favicon.ico`)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card pdf-card">
+                        <iframe src="./static/mix3r/pdfs/sample.pdf" title="Repository PDF asset" class="pdf-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3 has-text-centered">Demo Video</h2>
+                    <video id="demo-video" controls playsinline width="100%">
+                        <source src="./static/mix3r/videos/video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@inproceedings{vr3r2026,
+  title={VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality},
+  author={Anonymous},
+  booktitle={IEEE Virtual Reality and 3D User Interfaces (VR)},
+  year={2026}
+}</code></pre>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="#">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+                <a class="icon-link" href="#" class="external-link" disabled>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            Website adapted from <a href="https://nerfies.github.io">nerfies</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
