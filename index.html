@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description"
         content="Mix3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality">
-    <meta name="keywords" content="VR-3R, 3D Scene Reconstruction, Virtual Reality, Zero-shot">
+    <meta name="keywords" content="Mix3R, 3D Scene Reconstruction, Virtual Reality, Zero-shot">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mix3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality</title>
 
@@ -99,12 +99,12 @@
                     <div class="content has-text-centered">
                         <h2 class="title is-3" style="margin-bottom: 1rem;">TL; DR</h2>
                         <p class="is-size-5 has-text-weight-bold">
-                            We introduce VR-3R, a zero-shot framework that reconstructs high-quality 3D scenes robust
+                            We introduce Mix3R, a zero-shot framework that reconstructs high-quality 3D scenes robust
                             to shadows and occlusions from a single RGB image by strategically integrating large-scale
                             model priors.
                         </p>
                         <div class="has-text-centered" style="margin-top: 1.5rem;">
-                            <img src="./static/css/mix3r/images/tldr.png" alt="VR-3R TLDR diagram" width="100%" loading="lazy">
+                            <img src="./static/css/mix3r/images/new_teaser.png" alt="Mix3R TLDR diagram" width="100%" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -115,17 +115,17 @@
                     <h2 class="title is-3 has-text-centered">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            We present VR-3R, a zero-shot 3D scene reconstruction framework that enables immersive VR
+                            We present Mix3R, a zero-shot 3D scene reconstruction framework that enables immersive VR
                             interaction from a single real-world image. The increasing demand for mixed-reality
                             applications, including memory recollection and remote space exploration, highlights the
                             importance of reconstructing 3D environments from arbitrary photographs. Despite advances in
                             single-image 3D scene generation, existing methods remain limited by incomplete background
                             recovery under occlusion and inaccurate object placement caused by monocular depth
-                            estimation. VR-3R addresses these challenges by integrating large-scale model priors to
+                            estimation. Mix3R addresses these challenges by integrating large-scale model priors to
                             reconstruct high-quality 3D scenes without additional training. The framework incorporates
                             VLM-based foreground-background separation and depth alignment with unprojected point
                             clouds, achieving both scene-level consistency and detailed object recovery. Experiments on
-                            the 3D-FRONT dataset and in-the-wild real images demonstrate that VR-3R generates realistic
+                            the 3D-FRONT dataset and in-the-wild real images demonstrate that Mix3R generates realistic
                             backgrounds and accurate 3D models across diverse scenarios. We improve Chamfer Distance by
                             over 23% and F-score by more than 6% at the object level, and achieve 12% and 18% gains in
                             FID and FID-CLIP at the scene level. Our framework reconstructs interactive and immersive
@@ -139,12 +139,12 @@
                 <div class="column is-full-width">
                     <h2 class="title is-3 has-text-centered">Method</h2>
                     <div class="content has-text-centered">
-                        <img src="./static/css/mix3r/images/method.png" alt="VR-3R method diagram" width="100%"
+                        <img src="./static/css/mix3r/images/mix3r_main.png" alt="Mix3R method diagram" width="100%"
                             style="margin-bottom: 1.5rem;" loading="lazy">
                     </div>
                     <div class="content has-text-justified">
                         <p>
-                            Overview of the VR-3R pipeline. (a) Given a single input image, our system performs depth
+                            Overview of the Mix3R pipeline. (a) Given a single input image, our system performs depth
                             estimation, open-vocabulary segmentation, VLM-guided foreground-background separation, and
                             super-resolution with amodal completion for 2D image understanding. (b) The foreground mask
                             is then used to inpaint the background, and each object image is converted into 3D and
@@ -269,8 +269,8 @@
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@inproceedings{vr3r2026,
-  title={VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality},
+            <pre><code>@inproceedings{mix3r2026,
+  title={Mix3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality},
   author={Anonymous},
   booktitle={IEEE Virtual Reality and 3D User Interfaces (VR)},
   year={2026}
