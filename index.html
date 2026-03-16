@@ -4,10 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="description"
-        content="VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality">
-    <meta name="keywords" content="VR-3R, 3D Scene Reconstruction, Virtual Reality, Zero-shot">
+        content="SceneLinker: Compositional 3D Scene Generation via Semantic Scene Graph from RGB Sequences">
+    <meta name="keywords" content="SceneLinker, 3D Scene Generation, Semantic Scene Graph, 3D Scene Graph">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality</title>
+    <title>SceneLinker: Compositional 3D Scene Generation via Semantic Scene Graph from RGB Sequences</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -17,7 +31,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/icon.ico">
+    <link rel="icon" href="./static/images/graph.png">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
@@ -38,7 +52,24 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-                </div>
+                <!-- <a class="navbar-item" href="https://seokyoungxr.github.io">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a> -->
+
+                <!-- <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More Research
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://origen2025.github.io">
+                            ORIGEN
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+
         </div>
     </nav>
 
@@ -49,20 +80,40 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title publication-title">
-                            VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality
+                            <img src="./static/images/graph.png" alt="SceneLinker Icon"
+                                style="height: 0.95em; vertical-align: middle; margin-right: 6px; margin-bottom: 8px;">
+                            SceneLinker: Compositional 3D Scene Generation via
+                            Semantic Scene Graph from RGB Sequences
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="#">Anonymous</a><sup>*</sup>
+                                <a href="https://seokyoungxr.github.io">Seok-Young Kim</a></span>
+                            <span class="author-block">
+                                <a href="https://dooyoung.me">Dooyoung Kim</a></span>
+                            <span class="author-block">
+                                <a href="https://uvr-wjcho.github.io">Woojin Cho</a></span>
+                            <span class="author-block">
+                                <a href="https://hailsong.github.io">Hail Song</a></span>
+                            <span class="author-block">
+                                <a href="">Suji Kang</a></span>
+                            <span class="author-block">
+                                <a href="https://www.linkedin.com/in/wtwoo/">Woontack Woo</a>
                             </span>
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">IEEE VR 2026 Submission</span>
+                            <span class="author-block">KAIST</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-venue">
+                                IEEE Transactions on Visualization and Computer Graphics (TVCG) 2026
+                            </div>
                         </div>
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
+                                <!-- PDF Link. -->
                                 <span class="link-block">
                                     <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
@@ -72,13 +123,24 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="#demo-video" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://arxiv.org/abs/2602.02974"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <!-- Video Link. -->
+                                <!-- <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-youtube"></i>
                                         </span>
                                         <span>Video</span>
                                     </a>
-                                </span>
+                                </span> -->
+                                <!-- Code Link. -->
                                 <span class="link-block">
                                     <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
@@ -88,6 +150,7 @@
                                     </a>
                                 </span>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -95,153 +158,136 @@
         </div>
     </section>
 
-    <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <video id="teaser" autoplay controls muted loop playsinline width="100%">
-                    <source src="./static/videos/video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
 
     <section class="section">
         <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <!-- TL;DR -->
             <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
                 <div class="column is-four-fifths">
                     <div class="content has-text-centered">
                         <h2 class="title is-3" style="margin-bottom: 1rem;">TL; DR</h2>
                         <p class="is-size-5 has-text-weight-bold">
-                            We introduce VR-3R, a zero-shot framework that reconstructs high-quality 3D scenes robust to shadows and occlusions from a single RGB image by strategically integrating large-scale model priors.
+                            We introduce SceneLinker, which generates context-consistent 3D scenes via semantic scene
+                            graph from RGB sequences.
                         </p>
                     </div>
                 </div>
             </div>
 
+            <!-- Teaser Image -->
             <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
-                    <img src="./static/images/tldr.png" alt="TLDR Diagram" width="100%">
+                    <img src="./static/images/scenelinker_teaser.png" width="100%">
                 </div>
             </div>
 
+            <!-- Abstract -->
             <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
                 <div class="column is-four-fifths">
                     <h2 class="title is-3 has-text-centered">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            We present VR-3R, a zero-shot 3D scene reconstruction framework that enables immersive VR interaction from a single real-world image. The increasing demand for mixed-reality applications, including memory recollection and remote space exploration, highlights the importance of reconstructing 3D environments from arbitrary photographs. Despite advances in single-image 3D scene generation, existing methods remain limited by incomplete background recovery under occlusion and inaccurate object placement caused by monocular depth estimation. VR-3R addresses these challenges by integrating large-scale model priors to reconstruct high-quality 3D scenes without additional training. The framework incorporates VLM-based foreground–background separation and depth alignment with unprojected point clouds, achieving both scene-level consistency and detailed object recovery. Experiments on the 3D-FRONT dataset and in-the-wild real images demonstrate that VR-3R generates realistic backgrounds and accurate 3D models across diverse scenarios. We improve Chamfer Distance by over 23% and F-score by more than 6% at the object level, and achieves 12% and 18% gains in FID and FID-CLIP at the scene level. Our framework reconstructs interactive and immersive VR spaces from a single image, enabling practical deployment in real-world applications.
+                            We introduce SceneLinker, a novel framework that generates compositional 3D scenes via
+                            semantic scene graph from RGB sequences.
+                            To adaptively experience Mixed Reality (MR) content based on each user's space, it is
+                            essential to generate a 3D scene that reflects the real-world layout by compactly capturing
+                            the semantic cues of the surroundings.
+                            Prior works struggled to fully capture the contextual relationship between objects or mainly
+                            focused on synthesizing diverse shapes, making it challenging to generate 3D scenes aligned
+                            with object arrangements.
+                            We address these challenges by designing a graph network with cross-check feature attention
+                            for scene graph prediction and constructing a graph-variational autoencoder (graph-VAE),
+                            which consists of a joint shape and layout block for 3D scene generation.
+                            Experiments on the 3RScan/3DSSG and SG-FRONT datasets demonstrate that our approach
+                            outperforms state-of-the-art methods in both quantitative and qualitative evaluations, even
+                            in complex indoor environments and under challenging scene graph constraints.
+                            Our work enables users to generate consistent 3D spaces from their physical environments via
+                            scene graphs, allowing them to create spatial MR content.
                         </p>
                     </div>
                 </div>
             </div>
+            <!--/ Abstract. -->
+
+
             <div class="columns is-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
                     <h2 class="title is-3 has-text-centered">Method</h2>
                     <div class="content has-text-centered">
-                        <img src="./static/images/method.png" alt="Method Diagram" width="100%" style="margin-bottom: 1.5rem;">
+                        <img src="./static/images/main.png" width="100%" style="margin-bottom: 1.5rem;">
                     </div>
                     <div class="content has-text-justified">
                         <p>
-                            Overview of the VR-3R pipeline. (a) Given a single input image, our system performs depth estimation, open-vocabulary segmentation, VLM-guided foreground–background separation, and super-resolution with amodal completion for 2D image understanding. (b) The foreground mask is then used to inpaint the background, and each object image is converted into 3D and integrated with the background. Finally, depth alignment is applied to reconstruct a compositional 3D scene from the single input image.
+                            <strong>SceneLinker</strong>'s goal is to represent the real world at the graph-level and to
+                            generate
+                            context-consistent 3D scenes.
+                            Our pipeline consists of two separate processes: <strong>(1) 3D scene graph prediction
+                                network with cross-check attention</strong>, and <strong>(2) Layout-centric 3D scene
+                                generation</strong>.
+                        </p>
+                        <p>
+                            The first phase incrementally constructs segmented maps and point clouds using
+                            ORB-SLAM3 from image sequences to estimate 3D entities. These entities form nodes in a
+                            neighbor graph represented by oriented bounding boxes, multi-view images, and point
+                            features. We then apply an attention-based graph network to propagate robust message
+                            features between nodes and refine probability weights, resulting in a global scene graph.
+                        </p>
+                        <p>
+                            In the second phase, the constructed graph and predicted bounding boxes are embedded into
+                            our scene generation network. Also, we enhance object and relationship
+                            features using a pre-trained CLIP, and assign initial shape
+                            priors to nodes using DeepSDF. Our Graph-VAE with a Joint Shape and
+                            Layout block (JSL block) fuses correlated shape and bounding box features, stably preserving
+                            object positions in graph-based generated scenes.
                         </p>
                     </div>
                 </div>
             </div>
 
+
             <div class="columns is-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
-                    <h2 class="title is-3 has-text-centered">Interactive 3D Demos (3D-Front)</h2>
-                    <div class="columns is-centered is-multiline" style="margin-bottom: 1rem;">
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_1.png" alt="Image 1">
-                            </figure>
-                        </div>
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_2.png" alt="Image 2">
-                            </figure>
-                        </div>
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_7.png" alt="Image 3">
-                            </figure>
-                        </div>
+                    <h2 class="title is-3 has-text-centered">Results</h2>
+                    <div class="content has-text-justified">
+                        <!-- <p>
+                            Qualitative results demonstrating the performance...
+                        </p> -->
                     </div>
-                    <div class="columns is-centered is-multiline">
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Ours_9850" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/1c841aabd6854ca7b0148fe92d5639a8/embed"></iframe>
-                            </div>
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Sgour_12" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/b0b206223dfc47eda4a139f9b16c2920/embed"></iframe>
-                            </div>
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Ours_room1" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/9f80c7342ca54243b640612d0b86de68/embed"></iframe>
-                            </div>
-                        </div>
+                    <!-- Example images/videos could go here -->
+                    <div class="content has-text-centered">
+                        <img src="./static/images/fig_7_original.png" width="100%" style="margin-bottom: 1.5rem;">
                     </div>
                 </div>
             </div>
 
-            <div class="columns is-centered" style="margin-bottom: 3rem;">
-                <div class="column is-full-width">
-                    <h2 class="title is-3 has-text-centered">Interactive 3D Demos (In-the-wild Image)</h2>
-                    <div class="columns is-centered is-multiline" style="margin-bottom: 1rem;">
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_4.png" alt="Image 4">
-                            </figure>
-                        </div>
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_5.png" alt="Image 5">
-                            </figure>
-                        </div>
-                        <div class="column is-one-third">
-                            <figure class="image">
-                                <img src="./static/images/image_6.png" alt="Image 6">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="columns is-centered is-multiline">
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Ours_cat" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/2a58c8f2ecca487da0650ac5cc936a12/embed"></iframe>
-                            </div>
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Ours_bed" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/954703d647cb406dade494fec412b98f/embed"></iframe>
-                            </div>
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="sketchfab-embed-wrapper">
-                                <iframe title="Ours_toilet" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/95e065d43c6849f38ebfb9b93bcc727f/embed"></iframe>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Paper video. -->
+            <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3 has-text-centered">Demo Video</h2>
+                    <video id="demo-video" controls playsinline width="100%">
+                        <source src="./static/images/scenelinker26_demo.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
+            <!--/ Paper video. -->
 
         </div>
     </section>
+
 
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@inproceedings{vr3r2026,
-  title={VR-3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality},
-  author={Anonymous},
-  booktitle={IEEE Virtual Reality and 3D User Interfaces (VR)},
+            <pre><code>@article{kim2026scenelinker,
+  title={SceneLinker: Compositional 3D Scene Generation via Semantic Scene Graph from RGB Sequences},
+  author={Kim, Seok-Young and Kim, Dooyoung and Cho, Woojin and Song, Hail and Kang, Suji and Woo, Woontack},
+  journal={arXiv preprint arXiv:2602.02974},
   year={2026}
 }</code></pre>
         </div>
     </section>
+
 
     <footer class="footer">
         <div class="container">
