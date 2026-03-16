@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">IEEE VR 2026 Submission</span>
+                            <span class="author-block"><br>IEEE VR 2026 Submission</span>
                         </div>
 
                         <div class="column has-text-centered">
@@ -72,11 +72,11 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="#demo-video" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
-                                            <i class="fab fa-youtube"></i>
+                                            <i class="ai ai-arxiv"></i>
                                         </span>
-                                        <span>Video</span>
+                                        <span>arXiv</span>
                                     </a>
                                 </span>
                                 <span class="link-block">
@@ -95,18 +95,10 @@
         </div>
     </section>
 
-    <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <video id="teaser" autoplay controls muted loop playsinline width="100%">
-                    <source src="./static/videos/video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
 
     <section class="section">
         <div class="container is-max-desktop">
+            
             <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
                 <div class="column is-four-fifths">
                     <div class="content has-text-centered">
@@ -114,13 +106,10 @@
                         <p class="is-size-5 has-text-weight-bold">
                             We introduce VR-3R, a zero-shot framework that reconstructs high-quality 3D scenes robust to shadows and occlusions from a single RGB image by strategically integrating large-scale model priors.
                         </p>
+                        <div class="has-text-centered" style="margin-top: 1.5rem;">
+                            <img src="./static/images/tldr.png" alt="TLDR Diagram" width="100%">
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="columns is-centered has-text-centered" style="margin-bottom: 3rem;">
-                <div class="column is-full-width">
-                    <img src="./static/images/tldr.png" alt="TLDR Diagram" width="100%">
                 </div>
             </div>
 
@@ -134,6 +123,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="columns is-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
                     <h2 class="title is-3 has-text-centered">Method</h2>
@@ -150,8 +140,9 @@
 
             <div class="columns is-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
-                    <h2 class="title is-3 has-text-centered">Interactive 3D Demos (3D-Front)</h2>
-                    <div class="columns is-centered is-multiline" style="margin-bottom: 1rem;">
+                    <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Interactive 3D Demos (3D-Front)</h2>
+                    
+                    <div class="columns is-centered is-multiline">
                         <div class="column is-one-third">
                             <figure class="image">
                                 <img src="./static/images/image_1.png" alt="Image 1">
@@ -168,7 +159,7 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="columns is-centered is-multiline">
+                    <div class="columns is-centered is-multiline" style="margin-bottom: 2rem;">
                         <div class="column is-one-third">
                             <div class="sketchfab-embed-wrapper">
                                 <iframe title="Ours_9850" loading="lazy" style="width: 100%; aspect-ratio: 16/9; border: 0;" allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking src="https://sketchfab.com/models/1c841aabd6854ca7b0148fe92d5639a8/embed"></iframe>
@@ -185,13 +176,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="columns is-centered" style="margin-bottom: 3rem;">
-                <div class="column is-full-width">
-                    <h2 class="title is-3 has-text-centered">Interactive 3D Demos (In-the-wild Image)</h2>
-                    <div class="columns is-centered is-multiline" style="margin-bottom: 1rem;">
+                    <h2 class="title is-4 has-text-centered" style="margin-top: 3rem; margin-bottom: 2rem;">Interactive 3D Demos (In-the-wild Image)</h2>
+                    <div class="columns is-centered is-multiline">
                         <div class="column is-one-third">
                             <figure class="image">
                                 <img src="./static/images/image_4.png" alt="Image 4">
@@ -225,6 +212,16 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="columns is-centered has-text-centered" style="margin-top: 4rem;">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3 has-text-centered">Demo Video</h2>
+                    <video id="demo-video" controls playsinline width="100%">
+                        <source src="./static/videos/video.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
