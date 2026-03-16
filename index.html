@@ -58,6 +58,12 @@
                         </div>
 
                         <div class="column has-text-centered">
+                            <div class="publication-venue">
+                                IEEE International Symposium on Mixed and Augmented Reality (ISMAR) 2026 Submission
+                            </div>
+                        </div>
+
+                        <div class="column has-text-centered">
                             <div class="publication-links">
                                 <span class="link-block">
                                     <a href="#" class="external-link button is-normal is-rounded is-dark">
@@ -127,7 +133,7 @@ construction without additional training. The framework combines
 vision–language-guided foreground–background separation with
 depth alignment from back-projected point clouds to achieve re-
 liable background completion while preserving detailed object ge-
-ometry. Experiments on the 3D-FRONT dataset show that Mix3R
+metry. Experiments on the 3D-FRONT dataset show that Mix3R
 improves reconstruction quality, reducing Chamfer Distance by
 over 23% and increasing object-level F-score by more than 6%,
 with additional gains in scene-level perceptual metrics. User studies
@@ -163,92 +169,91 @@ of interactive MR spaces from a arbitrary single image.
             <div class="columns is-centered" style="margin-bottom: 3rem;">
                 <div class="column is-full-width">
                     <h2 class="title is-3 has-text-centered">Results</h2>
-
+                    
                     <h3 class="title is-4 has-text-centered section-subtitle">Interactive 3D Demos (3D-FRONT)</h3>
                     
                     <div class="columns is-centered is-multiline" style="margin-bottom: 0;">
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_1.png" alt="3D-FRONT demo image 1" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_1.png" alt="3D-FRONT demo image 1" loading="lazy">
                             </figure>
                         </div>
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_2.png" alt="3D-FRONT demo image 2" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_2.png" alt="3D-FRONT demo image 2" loading="lazy">
                             </figure>
                         </div>
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_7.png" alt="3D-FRONT demo image 3" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_7.png" alt="3D-FRONT demo image 3" loading="lazy">
                             </figure>
                         </div>
                     </div>
 
                     <div class="columns is-centered is-multiline" style="margin-bottom: 2rem; margin-top: 0;">
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Ours_9850" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_9850" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/1c841aabd6854ca7b0148fe92d5639a8/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/1c841aabd6854ca7b0148fe92d5639a8/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Sgour_12" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Sgour_12" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/b0b206223dfc47eda4a139f9b16c2920/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/b0b206223dfc47eda4a139f9b16c2920/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Ours_room1" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_room1" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/9f80c7342ca54243b640612d0b86de68/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/9f80c7342ca54243b640612d0b86de68/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                     </div>
-
 
                     <h3 class="title is-4 has-text-centered section-subtitle">Interactive 3D Demos (In-the-wild Image)</h3>
                     
                     <div class="columns is-centered is-multiline" style="margin-bottom: 0;">
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_4.png" alt="In-the-wild demo image 1" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_4.png" alt="In-the-wild demo image 1" loading="lazy">
                             </figure>
                         </div>
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_5.png" alt="In-the-wild demo image 2" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_5.png" alt="In-the-wild demo image 2" loading="lazy">
                             </figure>
                         </div>
                         <div class="column is-one-third">
-                            <figure class="image is-4by3">
-                                <img src="./static/css/mix3r/images/image_6.png" alt="In-the-wild demo image 3" loading="lazy" class="is-rounded" style="object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <figure class="media-card">
+                                <img src="./static/css/mix3r/images/image_6.png" alt="In-the-wild demo image 3" loading="lazy">
                             </figure>
                         </div>
                     </div>
 
                     <div class="columns is-centered is-multiline" style="margin-top: 0;">
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Ours_cat" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_cat" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/2a58c8f2ecca487da0650ac5cc936a12/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/2a58c8f2ecca487da0650ac5cc936a12/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Ours_bed" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_bed" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/954703d647cb406dade494fec412b98f/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/954703d647cb406dade494fec412b98f/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                         <div class="column is-one-third">
-                            <div class="image is-4by3">
-                                <iframe title="Ours_toilet" loading="lazy" class="has-ratio media-card"
+                            <div class="media-card iframe-card">
+                                <iframe title="Ours_toilet" loading="lazy" class="result-frame"
                                     allow="autoplay; fullscreen; xr-spatial-tracking; web-share" xr-spatial-tracking
-                                    src="https://sketchfab.com/models/95e065d43c6849f38ebfb9b93bcc727f/embed" style="width: 100%; height: 100%; border: none;"></iframe>
+                                    src="https://sketchfab.com/models/95e065d43c6849f38ebfb9b93bcc727f/embed" style="height: 300px; width: 100%; border: none;"></iframe>
                             </div>
                         </div>
                     </div>
@@ -260,26 +265,12 @@ of interactive MR spaces from a arbitrary single image.
                 <div class="column is-four-fifths">
                     <h2 class="title is-3 has-text-centered">Demo Video</h2>
                     <video id="demo-video" controls playsinline width="100%">
-                        <source src="./static/css/mix3r/videos/video.mp4" type="video/mp4">
+                        <source src="./static/video.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>@inproceedings{mix3r2026,
-  title={Mix3R: Zero-shot Interactive 3D Scene Reconstruction from a Single Image in Virtual Reality},
-  author={Anonymous},
-  booktitle={IEEE International Symposium on Mixed and Augmented Reality (ISMAR)},
-  year={2026}
-}</code></pre>
-        </div>
-    </section>
-
 
     <footer class="footer">
         <div class="container">
